@@ -1,0 +1,15 @@
+fastapi
+pydantic-settings
+SQLAlchemy
+SQLAlchemy-Utils
+alembic
+psycopg2-binary
+sqlmodel
+python-ulid
+sqlalchemy[asyncio]
+email-validator
+http3
+fast-depends
+uvicorn[standard]
+asyncpg
+orjson

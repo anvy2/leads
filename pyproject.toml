@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+requires-python = ">=3.12"
+name = "test"
+version = "1.0"
+dynamic = ["dependencies", "optional-dependencies"]
+
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.in"]}
+optional-dependencies.dev = {file = ["dev-requirements.in"]}
+optional-dependencies.test = {file = ["test-requirements.in"]}
+
+[tool.setuptools]
+py-modules = []
+
+[tool.pytest.ini_options]
+addopts = ["--import-mode=importlib"]
+pythonpath = ["."]
+log_cli = 1 
+asyncio_mode = "auto"
+
+[tool.pyright]
+typeCheckingMode = "basic"
+venvPath = "/root/miniconda3/envs"
+venv = "test"
+pythonVersion = "3.12"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
